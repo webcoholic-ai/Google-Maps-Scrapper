@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jaipur Home Connect — Real Estate & Home Services</title>
+  <meta name="description" content="Verified real estate and home-service leads in Jaipur for buyers and professionals.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="/"><span class="brand-mark">J</span><span>Jaipur Home <b>Connect</b></span></a>
+    <nav><a href="#services">Services</a><a href="#how">How it works</a><a class="nav-link" href="/dashboard">Agent login</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">JAIPUR'S SMART LEAD NETWORK</p>
+        <h1>Find the right help.<br><em>Move with confidence.</em></h1>
+        <p class="hero-text">Tell us what you need. We match Jaipur property buyers with trusted agents and home professionals.</p>
+        <div class="trust-row"><span>✓ Jaipur-focused</span><span>✓ Quick response</span><span>✓ No listings</span></div>
+      </div>
+
+      <form id="leadForm" class="lead-card">
+        <div class="card-heading"><div><p>Get matched</p><h2>Start your requirement</h2></div><span id="stepBadge">1 of 2</span></div>
+        <div class="fields" id="step1">
+          <label>Full name<input name="name" autocomplete="name" required placeholder="Your name"></label>
+          <label>Phone number<div class="phone"><span>+91</span><input name="phone" autocomplete="tel" inputmode="numeric" required minlength="10" placeholder="98765 43210"></div></label>
+          <label>I need help with<select name="service" required><option value="">Choose a service</option>{% for service in services %}<option>{{ service }}</option>{% endfor %}</select></label>
+          <label>Preferred locality<select name="locality" required><option value="">Choose locality</option>{% for locality in localities %}<option>{{ locality }}</option>{% endfor %}</select></label>
+          <button type="button" class="primary" id="nextBtn">Continue <span>→</span></button>
+        </div>
+        <div class="fields hidden" id="step2">
+          <label>Budget range<select name="budget" required><option value="">Choose budget</option><option>Under ₹25 lakh</option><option>₹25–50 lakh</option><option>₹50 lakh–1 crore</option><option>₹1–2 crore</option><option>₹2 crore+</option><option>Not sure</option></select></label>
+          <label>When do you need it?<select name="timeline" required><option value="">Choose timeline</option><option>Immediately</option><option>Within 1 month</option><option>1–3 months</option><option>3–6 months</option><option>Just exploring</option></select></label>
+          <label>Requirement<textarea name="requirement" rows="3" placeholder="Area, property type or service details..."></textarea></label>
+          <label class="consent"><input type="checkbox" name="consent" value="1" required><span>I agree to be contacted by a matched Jaipur professional.</span></label>
+          <div class="actions"><button type="button" class="secondary" id="backBtn">Back</button><button type="submit" class="primary">Find my match <span>→</span></button></div>
+        </div>
+        <p id="formMessage" class="form-message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="services" id="services">
+      <p class="section-kicker">EVERYTHING FOR YOUR NEW SPACE</p>
+      <h2>One requirement. <em>The right experts.</em></h2>
+      <div class="service-grid">
+        <article><b>01</b><h3>Real Estate</h3><p>Buyers, investors and local agents.</p></article>
+        <article><b>02</b><h3>Interior & Kitchen</h3><p>Designers and modular kitchen experts.</p></article>
+        <article><b>03</b><h3>Build & Renovate</h3><p>Architects, contractors and painters.</p></article>
+        <article><b>04</b><h3>Move & Finance</h3><p>Movers, lawyers and home loan support.</p></article>
+      </div>
+    </section>
+
+    <section class="how" id="how">
+      <div><p class="section-kicker">SIMPLE PROCESS</p><h2>Matched in <em>three steps</em></h2></div>
+      <ol><li><span>1</span><div><h3>Share your need</h3><p>Tell us your locality, budget and timeline.</p></div></li><li><span>2</span><div><h3>Get smart-matched</h3><p>We qualify and route your requirement.</p></div></li><li><span>3</span><div><h3>Speak directly</h3><p>A relevant Jaipur professional responds.</p></div></li></ol>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="/"><span class="brand-mark">J</span><span>Jaipur Home <b>Connect</b></span></a><p>© 2026 Jaipur Home Connect</p></footer>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
